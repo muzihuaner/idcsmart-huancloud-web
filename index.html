@@ -12,6 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!--网站统计-->
 <script defer src="https://tj.quickso.cn/script.js" data-website-id="370fe28d-b060-4fc7-ac98-fee3d6b192c7"></script>
+
+
     <!-- Tailwind CSS Configuration -->
     <script>
         tailwind.config = {
@@ -82,6 +84,69 @@
 <body class="flex min-h-[100dvh] flex-col">
     <!-- Header -->
     <header id="header" class="sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 bg-transparent">
+        <!-- 蓝色跑马灯横幅开始 -->
+        <style>
+            /* 跑马灯外层容器：科技蓝背景 */
+.blue-marquee-banner {
+    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%); /* 渐变深蓝色 */
+    color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 100%;
+    z-index: 9999; /* 确保在最上层显示 */
+}
+
+/* 滚动动画包裹块 */
+.marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marquee-speed 25s linear infinite; /* 25秒走完一轮，数字越小速度越快 */
+}
+
+/* 滚动内容样式 */
+.marquee-content {
+    padding-right: 100px; /* 两段文字之间的间距 */
+    letter-spacing: 0.5px;
+}
+
+/* 强调高亮文本（如：旧平台链接） */
+.marquee-content b {
+    color: #ffeb3b; /* 黄色高亮提醒 */
+}
+
+/* 鼠标悬停时暂停滚动，方便用户阅读 */
+.blue-marquee-banner:hover .marquee-wrapper {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+/* CSS 关键帧动画：实现平滑无缝循环 */
+@keyframes marquee-speed {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0); /* 刚好滚动完第一组内容 */
+    }
+}
+        </style>
+<div class="blue-marquee-banner">
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            📢 <b>重要公告：</b>原欢云平台已升级！旧平台（idc.huancloud.cn）已停止购买与续费，现有服务到期后将被删除，请广大用户务必在到期前做好数据备份与迁移！
+        </div>
+        <!-- 复制一份实现无缝滚动循环 -->
+        <div class="marquee-content" aria-hidden="true">
+            📢 <b>重要公告：</b>原欢云平台已升级！旧平台（idc.huancloud.cn）已停止购买与续费，现有服务到期后将被删除，请广大用户务必在到期前做好数据备份与迁移！
+        </div>
+    </div>
+</div>
+<!-- 蓝色跑马灯横幅结束 -->
         <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
             <a href="#" class="flex items-center gap-2 font-bold text-lg">
                 <img class="light-mode-item " src="/themes/web/huancloud/imgs/LOGO.svg" alt="logo" height="50px"
@@ -376,8 +441,8 @@
                                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                                 </svg>
                             </div>
-                            <h3 class="text-xl font-bold mb-2">LXC 容器云</h3>
-                            <p class="text-gray-600 dark:text-gray-400">基于LXC架构的轻量级NAT云服务，高性价比，弹性可控。</p>
+                            <h3 class="text-xl font-bold mb-2">LXD 容器云</h3>
+                            <p class="text-gray-600 dark:text-gray-400">基于LXD架构的轻量级NAT云服务，高性价比，弹性可控。</p>
                         </div>
                     </div>
                     <div
@@ -569,7 +634,7 @@
                                         <span class="text-4xl font-bold">￥10.95起</span>
                                         <span class="text-gray-500 dark:text-gray-400 ml-1">/月</span>
                                     </div>
-                                    <p class="text-gray-500 dark:text-gray-400 mt-2">获取高性能和比LXC更独立的体验。</p>
+                                    <p class="text-gray-500 dark:text-gray-400 mt-2">获取高性能和比LXD更独立的体验。</p>
                                     <ul class="space-y-3 my-6 flex-grow">
                                         <li class="flex items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -629,12 +694,12 @@
                                     class="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 text-xs font-medium rounded-bl-lg">
                                     最受欢迎</div>
                                 <div class="p-6 flex flex-col h-full">
-                                    <h3 class="text-2xl font-bold">LXC容器云</h3>
+                                    <h3 class="text-2xl font-bold">LXD容器云</h3>
                                     <div class="flex items-baseline mt-4">
                                         <span class="text-4xl font-bold">￥0.5起</span>
                                         <span class="text-gray-500 dark:text-gray-400 ml-1">/月</span>
                                     </div>
-                                    <p class="text-gray-500 dark:text-gray-400 mt-2">基于LXC的网络优先云服务器。</p>
+                                    <p class="text-gray-500 dark:text-gray-400 mt-2">基于LXD的网络优先云服务器。</p>
                                     <ul class="space-y-3 my-6 flex-grow">
                                         <li class="flex items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -762,7 +827,7 @@
                                         <span class="text-4xl font-bold">￥10.95起</span>
                                         <span class="text-gray-500 dark:text-gray-400 ml-1">/月</span>
                                     </div>
-                                    <p class="text-gray-500 dark:text-gray-400 mt-2">获取高性能和比LXC更独立的体验。</p>
+                                    <p class="text-gray-500 dark:text-gray-400 mt-2">获取高性能和比LXD更独立的体验。</p>
                                     <ul class="space-y-3 my-6 flex-grow">
                                         <li class="flex items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -822,12 +887,12 @@
                                     class="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 text-xs font-medium rounded-bl-lg">
                                     最受欢迎</div>
                                 <div class="p-6 flex flex-col h-full">
-                                    <h3 class="text-2xl font-bold">LXC容器云</h3>
+                                    <h3 class="text-2xl font-bold">LXD容器云</h3>
                                     <div class="flex items-baseline mt-4">
                                         <span class="text-4xl font-bold">￥0.45起</span>
                                         <span class="text-gray-500 dark:text-gray-400 ml-1">/月</span>
                                     </div>
-                                    <p class="text-gray-500 dark:text-gray-400 mt-2">基于LXC的网络优先云服务器。</p>
+                                    <p class="text-gray-500 dark:text-gray-400 mt-2">基于LXD的网络优先云服务器。</p>
                                     <ul class="space-y-3 my-6 flex-grow">
                                         <li class="flex items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -1053,7 +1118,7 @@
                                     </polygon>
                                 </svg>
                             </div>
-                            <p class="text-lg mb-6 flex-grow">HUANCLOUD的LXC服务器提供了业内无与伦比的性价比。</p>
+                            <p class="text-lg mb-6 flex-grow">HUANCLOUD的LXD服务器提供了业内无与伦比的性价比。</p>
                             <div
                                 class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-200/40 dark:border-gray-800/40">
                                 <div
@@ -1174,7 +1239,7 @@
                                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                             </svg>
-                            admin@huancloud.cn
+                            admin@huangetech.com
                         </a>
                         <a href="https://t.me/huan_cloud" target="_blank"
                             class="support-link text-blue-200 text-sm flex items-center">
@@ -1218,6 +1283,7 @@
 
 
     <script src="/themes/web/huancloud/script.js"></script>
+    <script src="https://www.idcjk.com/static/embed.js" data-domain="huancloud.cn " data-badge="true"></script>
 </body>
 
 </html>
