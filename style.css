@@ -44,7 +44,8 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+    font-family: Roboto, "DingTalk JinBuTi", sans-serif;
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
 }
