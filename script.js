@@ -122,23 +122,33 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set initial active tab
     tabButtons[0].setAttribute('aria-selected', 'true');
 
-    // Mobile dropdown menu toggle
-    const productDropdown = document.querySelector('.mobile-menu .group');
-    if (productDropdown) {
-        const button = productDropdown.querySelector('button');
-        const dropdown = productDropdown.querySelector('.absolute');
+    const mobileProductBtn = document.getElementById('mobile-product-btn');
+    const mobileProductDropdown = document.getElementById('mobile-product-dropdown');
+    const mobileProductChevron = document.getElementById('mobile-product-chevron');
 
-        button.addEventListener('click', function (e) {
+    if (mobileProductBtn && mobileProductDropdown) {
+        mobileProductBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            const isOpen = dropdown.classList.contains('opacity-100');
+            e.stopPropagation();
+            const isOpen = !mobileProductDropdown.classList.contains('hidden');
 
             if (isOpen) {
-                dropdown.classList.remove('opacity-100', 'visible');
-                dropdown.classList.add('opacity-0', 'invisible');
+                mobileProductDropdown.classList.add('hidden');
+                mobileProductChevron.style.transform = 'rotate(0deg)';
             } else {
-                dropdown.classList.remove('opacity-0', 'invisible');
-                dropdown.classList.add('opacity-100', 'visible');
+                mobileProductDropdown.classList.remove('hidden');
+                mobileProductChevron.style.transform = 'rotate(180deg)';
             }
+        });
+
+        mobileProductDropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileProductDropdown.classList.add('hidden');
+                mobileProductChevron.style.transform = 'rotate(0deg)';
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                xIcon.classList.add('hidden');
+            });
         });
     }
 });
